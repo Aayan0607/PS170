@@ -1,0 +1,31 @@
+{
+  "source_pdf": "TEAM_HUSTLERS-SIH-26_PS-170.pdf",
+  "source_workbook": "Base Data.xlsx",
+  "review": "All six PDF slides and both worksheets inspected; Sheet3 is empty. The architecture on slide 3 is an embedded image and was read visually.",
+  "references": [
+    {"range": "Sheet1!AB95:AI97", "finding": "Experimental burn-in: 125 C, 168 hours, VCC 4 V, input 3 V. A separate specification row says 300 hours minimum.", "use": "Default 125 C / 168 h / 4 V synthetic demonstration; not a certification requirement."},
+    {"range": "Sheet1!S5:W35", "finding": "Thermal cycling profile includes approximately -40 C to +60 C, with power states.", "use": "Motivation for time-varying stress. Demo uses a declared sinusoidal profile around 125 C, not this original cycle."},
+    {"range": "Sheet1!AB45:AU90", "finding": "Dynamic measurements include temperature, voltage, rise/fall times and propagation delays for multiple device families.", "use": "Propagation delay channel in ns and temperature/voltage covariates. Demo delay baseline 60 ns is illustrative; families are not pooled into a physical device model."},
+    {"range": "Sheet1!BR4:BY6", "finding": "T22 capacitor leakage: 6 microamp at 0.0833 h and 0.6 microamp at 770 h, 125 C and 50 V.", "use": "Leakage units and order-of-magnitude context only; these two points are not a degradation curve or a 4 V logic-device specification."},
+    {"range": "Sheet1!AB5:AI39", "finding": "Pre/post Vin-High measurements, rather than continuous burn-in time series.", "use": "Motivates change-from-baseline features; no original measurement enters training."},
+    {"range": "Sheet1!AK15:AW41", "finding": "Statistical baselines and device-specific voltage limits.", "use": "Motivates separate statistical and specification checks; not used as limits for current or delay."},
+    {"range": "Sheet1!C4:I49", "finding": "Aggregated reliability tables, including a transistor rate/MTBF inconsistency and headings transcribed as 1250 C.", "use": "Not used to infer failure probabilities, failure prevalence, or model labels."},
+    {"range": "Sheet1!M4:Q113", "finding": "NASA-center screening survey covering thermal and vibration screens.", "use": "Historical screening context only; mechanical testing is outside the slide's software sensor pipeline."}
+  ],
+  "assumptions": [
+    "All generated telemetry, identities, labels, degradation slopes, noise, correlations, injection times and anomaly prevalence are synthetic.",
+    "IDDQ baseline 12 mA, leakage baseline 0.65 microamp, delay baseline 60 ns are prototype assumptions, not NASA-qualified component values.",
+    "Demonstration limits: IDDQ 5–22 mA, leakage 0.05–3 microamp, propagation delay 25–100 ns. No hardware qualification claim.",
+    "Hourly sampling, default 24-sample trailing window, 24-hour prediction horizon; cycles and supply variation are synthetic.",
+    "C_FN=20 and C_FP=1 are relative illustrative costs. Abnormality probability is calibrated on synthetic labels, not mission failure likelihood.",
+    "The source gives regression but no exact estimator, covariance metric, fusion formula or hyperparameters. Those choices are documented in METHODS.md."
+  ],
+  "links": [
+    {"url": "https://ntrs.nasa.gov/citations/19730007481", "status": "Cited in PDF and workbook; direct web retrieval returned 403 during review."},
+    {"url": "https://ntrs.nasa.gov/citations/19670007443", "status": "Workbook reference ID; direct web retrieval returned 403 during review."},
+    {"url": "https://ntrs.nasa.gov/citations/19840013934", "status": "Verified NASA record: NASA flight electronics environmental stress screening survey, published December 1, 1983."},
+    {"url": "https://ntrs.nasa.gov/citations/19740000280", "status": "Cited by the presentation; not used to set numeric assumptions."},
+    {"url": "https://nepp.nasa.gov", "status": "Presentation background repository; no telemetry imported."},
+    {"url": "https://www.nasa.gov/intelligent-systems-division/discovery-and-systems-health/pcoe/pcoe-data-set-repository/", "status": "Presentation background repository; no telemetry imported."}
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "seed": 170,
+  "components": 24,
+  "duration_h": 168,
+  "metrics": {
+    "scope": "Observed held-out synthetic component-hours after warmup; windows overlap",
+    "tn": 1728,
+    "fp": 221,
+    "fn": 29,
+    "tp": 1526,
+    "samples": 3504,
+    "precision": 0.8734974241556954,
+    "recall": 0.9813504823151126,
+    "f1": 0.9242883101150817,
+    "brier": 0.02045505903968484,
+    "realized_cost": 801.0,
+    "cost_sensitivity": [
+      {
+        "cost_ratio": 1,
+        "threshold": 0.5,
+        "fp": 39,
+        "fn": 51,
+        "total_cost": 90,
+        "holds_or_rejects": 1543
+      },
+      {
+        "cost_ratio": 5,
+        "threshold": 0.16666666666666666,
+        "fp": 67,
+        "fn": 43,
+        "total_cost": 282,
+        "holds_or_rejects": 1579
+      },
+      {
+        "cost_ratio": 10,
+        "threshold": 0.09090909090909091,
+        "fp": 107,
+        "fn": 40,
+        "total_cost": 507,
+        "holds_or_rejects": 1622
+      },
+      {
+        "cost_ratio": 20,
+        "threshold": 0.047619047619047616,
+        "fp": 221,
+        "fn": 29,
+        "total_cost": 801,
+        "holds_or_rejects": 1747
+      },
+      {
+        "cost_ratio": 50,
+        "threshold": 0.0196078431372549,
+        "fp": 788,
+        "fn": 15,
+        "total_cost": 1538,
+        "holds_or_rejects": 2328
+      },
+      {
+        "cost_ratio": 100,
+        "threshold": 0.009900990099009901,
+        "fp": 1407,
+        "fn": 1,
+        "total_cost": 1507,
+        "holds_or_rejects": 2961
+      }
+    ],
+    "by_scenario": [
+      {
+        "scenario": "gradual_degradation",
+        "samples": 584,
+        "active_truth": 510,
+        "flagged": 497,
+        "false_positives": 3,
+        "missed": 16
+      },
+      {
+        "scenario": "healthy",
+        "samples": 584,
+        "active_truth": 0,
+        "flagged": 96,
+        "false_positives": 96,
+        "missed": 0
+      },
+      {
+        "scenario": "intermittent_spikes",
+        "samples": 584,
+        "active_truth": 84,
+        "flagged": 116,
+        "false_positives": 32,
+        "missed": 0
+      },
+      {
+        "scenario": "relationship_drift",
+        "samples": 584,
+        "active_truth": 486,
+        "flagged": 491,
+        "false_positives": 18,
+        "missed": 13
+      },
+      {
+        "scenario": "stress_only",
+        "samples": 584,
+        "active_truth": 0,
+        "flagged": 66,
+        "false_positives": 66,
+        "missed": 0
+      },
+      {
+        "scenario": "sudden_shift",
+        "samples": 584,
+        "active_truth": 475,
+        "flagged": 481,
+        "false_positives": 6,
+        "missed": 0
+      }
+    ]
+  },
+  "example": {
+    "component": "DEMO-003",
+    "first_hold_h": 39.0,
+    "first_static_breach_h": 137.0,
+    "lead_h": 98.0
+  },
+  "source_files": [
+    {
+      "name": "Base Data.xlsx",
+      "bytes": 45938
+    },
+    {
+      "name": "TEAM_HUSTLERS-SIH-26_PS-170.pdf",
+      "bytes": 1708770
+    }
+  ]
+}
